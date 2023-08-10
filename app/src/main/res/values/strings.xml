@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Omada Images</string>
+    <string name="screen_search_bar_hint">Keywords</string>
+    <string name="screen_search_button_label">Search</string>
+    <string name="screen_empty_text">Search for an image using keywords or get recent photos by pressing the search button.</string>
+    <string name="screen_error_text">There was an error getting the photos. Please check your internet connection and try again</string>
+    <string name="screen_searching_text">"Searching…"</string>
+    <string name="screen_popup_details_description">Description: %s</string>
+    <string name="screen_popup_details_date_taken">Date taken: %s</string>
+    <string name="screen_popup_details_owner">Owner: %s</string>
+    <string name="screen_popup_details_original_format">Original format: %s</string>
+    <string name="content_description_popup_photo">An enlarged photo from %s</string>
+    <string name="content_description_search_button_icon">Search icon</string>
+    <string name="content_description_empty_image">Empty screen icon</string>
+    <string name="content_description_error_image">Error screen icon</string>
+</resources>
