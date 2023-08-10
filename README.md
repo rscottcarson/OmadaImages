@@ -1,6 +1,8 @@
 # Omada Images
 Technical assignment for Omada Health
 
+Developed on Android Studio Giraffe | 2022.3.1
+
 ## Approach and libraries used
 For this technical project I used an MVVM architecture and utilized Compose for the View layer. All
 state is hoisted out of the View layer and is managed by the ViewModel. I wrote a `SimplePager` class
