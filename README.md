@@ -36,6 +36,8 @@ The following is a list of improvements I would make to the app given more time:
 in the middle of each API call.
 - **Build a second screen for the Photo Detail requirement**: I believe a full screen UI could look 
 better and more consistent between photos.
+- **Pager API**: The generic `SimplePager` API is still a little too catered towards the apps 
+specific use case
 - **Paging error handling**: With regards to the paging implementation itself, internally the 
 `SimplePager` just ensures the `PageOperation` (in this case api calls) goes well. The `Page` output 
 does not take into account internal errors, unknown states, etc. This would be especially important 

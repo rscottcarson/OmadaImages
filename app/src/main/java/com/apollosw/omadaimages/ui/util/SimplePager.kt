@@ -12,6 +12,15 @@ import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.milliseconds
 
 @OptIn(FlowPreview::class)
+/**
+ * A basic, generic pager that caches pages of data
+ *
+ * @param T the type of item being paged through
+ * @property scrollVisibleItemIndex a flow that emits the most recent visible item index in a
+ * listview or gridview to help determine when to fetch new data
+ * @property pageSize the number of elements to fetch per page
+ * @property cachedPageLimit the number of pages to keep cached in memory
+ */
 class SimplePager<T>(
     private val scrollVisibleItemIndex: Flow<Int>,
     private val pageSize: Int = DEFAULT_PAGE_SIZE,
@@ -35,7 +44,14 @@ class SimplePager<T>(
         }
     }
 
-    suspend fun page(
+    /**
+     * Start paging from the first page
+     *
+     * @param loadPage a function that defines how the pager should fetch new data
+     *
+     *@return A flow that emits a Page on new data being fetched from memory or using [loadPage]
+     */
+    suspend fun pageWith(
         loadPage: suspend (pageIndex: Int, elementsPerPage: Int) -> PagingOperation<List<T>>
     ): Flow<Page<List<T>>> {
         currentDataPage = null
@@ -206,7 +222,8 @@ class SimplePager<T>(
         if (lastIndex - firstIndex > cachedPageLimit) {
             // we need to drop a page
             if ((lastIndex - currentIndex) > (currentIndex - firstIndex)) {
-                lastCachedDataPage = lastCachedDataPage?.previousDataPage // Drop last page
+                // Drop last page
+                lastCachedDataPage = lastCachedDataPage?.previousDataPage
                 lastCachedDataPage?.nextDataPage = null
             } else {
                 // Drop first page
@@ -231,11 +248,17 @@ class SimplePager<T>(
         }
     }
 
+    /**
+     * Encapsulates the result of [page] when fetching new data
+     */
     sealed class PagingOperation<T> {
         class Error<T> : PagingOperation<T>()
         class Success<T>(val data: T) : PagingOperation<T>()
     }
 
+    /**
+     * Basic wrapper around newly paged data
+     */
     sealed class Page<T> {
         class Error<T> : Page<T>()
         class Success<T>(val data: T) : Page<T>()

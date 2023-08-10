@@ -116,7 +116,7 @@ class ImageSearchViewModel @Inject constructor(
     ) {
         pagerJob?.cancel()
         pagerJob = viewModelScope.launch {
-            pager.page(apiCall).collect {
+            pager.pageWith(apiCall).collect {
                 _photoSearchViewState.emit(PhotoSearchViewState.NotSearching)
                 _photoGridViewState.emit(
                         when(it) {
