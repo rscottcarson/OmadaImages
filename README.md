@@ -1,2 +1,2 @@
 # OmadaImages
-Technical assignet for Omada Health
+Technical assignment for Omada Health
