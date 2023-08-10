@@ -62,7 +62,7 @@ class HTTPFlickrAPI(
                 parameters.append("nojsoncallback", "1")
                 parameters.append(
                     "extras",
-                    "description,date_upload,owner_name,original_format,url_q,url_z"
+                    "description,date_taken,owner_name,original_format,url_q,url_z"
                 )
             }
         }

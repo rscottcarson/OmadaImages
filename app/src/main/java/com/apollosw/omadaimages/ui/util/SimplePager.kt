@@ -1,6 +1,5 @@
 package com.apollosw.omadaimages.ui.util
 
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
@@ -98,7 +97,6 @@ class SimplePager<T>(
 
             currentIndex == lastIndex && lastIndex < MAX_NUM_PAGES -> {
                 // Need to fetch next page of data
-                Log.d("*** Pager", "need next page")
                 currentDataPage?.let {
                     val nextPageIndex = it.pageNumber + 1
                     when (val pageResult = page(nextPageIndex, pageSize)) {
@@ -125,7 +123,6 @@ class SimplePager<T>(
     }
 
     private suspend fun previousPage() {
-        Log.d("*** Pager", "Page previous from ${currentDataPage?.pageNumber}")
         val currentIndex = currentDataPage?.pageNumber ?: 0
         val firstIndex = firstCachedDataPage?.pageNumber ?: 0
 
@@ -203,10 +200,6 @@ class SimplePager<T>(
 
         val percentageScrolled = visibleElementIndex.toDouble() / maxElements
 
-        Log.d(
-            "*** Pager",
-            "percentage: $percentageScrolled, current - $currentIndex, first - $firstIndex"
-        )
         if (percentageScrolled > 0.8f && isScrollingNext) nextPage()
         else if (percentageScrolled < 0.2f && !isScrollingNext) previousPage()
 
