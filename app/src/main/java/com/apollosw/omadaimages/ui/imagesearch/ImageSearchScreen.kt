@@ -408,7 +408,7 @@ fun ExpandedPhoto(
 
 @Composable
 @Preview(showBackground = true)
-fun previewImageSearchContent() {
+fun PreviewImageSearchContent() {
     OmadaImagesTheme {
         ImageSearchContent(
             photoSearchViewState = PhotoSearchViewState.NotSearching,
@@ -495,7 +495,7 @@ fun previewImageSearchContent() {
 
 @Composable
 @Preview(showBackground = true)
-fun previewImageSearchContentEmpty() {
+fun PreviewImageSearchContentEmpty() {
     OmadaImagesTheme {
         ImageSearchContent(
             photoSearchViewState = PhotoSearchViewState.NotSearching,
@@ -507,7 +507,7 @@ fun previewImageSearchContentEmpty() {
 
 @Composable
 @Preview(showBackground = true)
-fun previewImageSearchBar() {
+fun PreviewImageSearchBar() {
     OmadaImagesTheme {
         ImageSearchBar(photoSearchViewState = PhotoSearchViewState.NotSearching)
     }
@@ -515,7 +515,7 @@ fun previewImageSearchBar() {
 
 @Composable
 @Preview(showBackground = true)
-fun previewImageSearchBarisSearching() {
+fun PreviewImageSearchBarisSearching() {
     OmadaImagesTheme {
         ImageSearchBar(photoSearchViewState = PhotoSearchViewState.Searching)
     }
@@ -523,7 +523,7 @@ fun previewImageSearchBarisSearching() {
 
 @Composable
 @Preview(showBackground = true)
-fun previewImageGrid() {
+fun PreviewImageGrid() {
     OmadaImagesTheme {
         ImageGrid(
             photoGridViewState = PhotoGridViewState.Loaded(
