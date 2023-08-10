@@ -1,4 +1,4 @@
-package com.apollosw.omadaimages.ui.state
+package com.apollosw.omadaimages.ui.imagesearch.state
 
 sealed class PhotoGridViewState {
     data object Empty : PhotoGridViewState()

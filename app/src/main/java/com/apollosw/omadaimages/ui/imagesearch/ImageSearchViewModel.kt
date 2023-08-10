@@ -1,14 +1,14 @@
-package com.apollosw.omadaimages.ui
+package com.apollosw.omadaimages.ui.imagesearch
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.apollosw.omadaimages.domain.model.FlickrPhotoInfo
 import com.apollosw.omadaimages.domain.repo.api.ApiResponse
 import com.apollosw.omadaimages.domain.repo.api.FlickrAPI
-import com.apollosw.omadaimages.ui.state.PhotoGridViewState
-import com.apollosw.omadaimages.ui.state.PhotoSearchViewState
-import com.apollosw.omadaimages.ui.state.PhotoViewData
-import com.apollosw.omadaimages.ui.state.PopupViewState
+import com.apollosw.omadaimages.ui.imagesearch.state.PhotoGridViewState
+import com.apollosw.omadaimages.ui.imagesearch.state.PhotoSearchViewState
+import com.apollosw.omadaimages.ui.imagesearch.state.PhotoViewData
+import com.apollosw.omadaimages.ui.imagesearch.state.PopupViewState
 import com.apollosw.omadaimages.ui.util.SimplePager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job

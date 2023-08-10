@@ -1,4 +1,4 @@
-package com.apollosw.omadaimages.ui
+package com.apollosw.omadaimages.ui.imagesearch
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -56,10 +56,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.apollosw.omadaimages.R
-import com.apollosw.omadaimages.ui.state.PhotoGridViewState
-import com.apollosw.omadaimages.ui.state.PhotoSearchViewState
-import com.apollosw.omadaimages.ui.state.PhotoViewData
-import com.apollosw.omadaimages.ui.state.PopupViewState
+import com.apollosw.omadaimages.ui.imagesearch.state.PhotoGridViewState
+import com.apollosw.omadaimages.ui.imagesearch.state.PhotoSearchViewState
+import com.apollosw.omadaimages.ui.imagesearch.state.PhotoViewData
+import com.apollosw.omadaimages.ui.imagesearch.state.PopupViewState
 import com.apollosw.omadaimages.ui.theme.OmadaImagesTheme
 import com.apollosw.omadaimages.ui.theme.lightGrey
 

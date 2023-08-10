@@ -3,6 +3,7 @@ package com.apollosw.omadaimages.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.apollosw.omadaimages.ui.imagesearch.ImageSearchScreen
 import com.apollosw.omadaimages.ui.theme.OmadaImagesTheme
 import dagger.hilt.android.AndroidEntryPoint
 

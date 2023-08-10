@@ -1,6 +1,19 @@
 # Omada Images
 Technical assignment for Omada Health
 
+## Approach and libraries used
+For this technical project I used an MVVM architecture and utilized Compose for the View layer. All
+state is hoisted out of the View layer and is managed by the ViewModel. I wrote a `SimplePager` class
+that handles fetching new data when needed during scroll. It also caches pages of data and is 
+configurable to find the right balance between memory management, network request management and UI 
+responsiveness.
+
+**Libraries**:
+- Kotlinx Serialization - JSON deserialization
+- Coil - async image loading with decent compose support
+- Ktor - Networking
+- Dagger/Hilt - Dependency injection
+
 ## Known Issues
 The following is a list of known issues with the application:
 
@@ -9,7 +22,7 @@ back when a new page is loaded. Unfortunately this is due to a bug/behavior in t
 results in pages sometimes returning fewer results per page than requested. i.e. I have the 
 `SimplePager` configured to request 120 (divisible by 3, great for our gridview) but often times the 
 API only returns 118 or 119. This causes our data to not be perfect multiples of 3 which 
-`LazyVerticalGrid` does not approve of.
+`LazyVerticalGrid` does not approve of. (See: [Flickr issue thread](https://www.flickr.com/groups/51035612836@N01/discuss/72157666364892360/))
   - Possible solutions would be add filler (blank) objects to the grid or request overlapping pages
 and merge the data. I did not pursue either of these because it did not have a large enough impact 
 on the experience using the application and my time was limited.
